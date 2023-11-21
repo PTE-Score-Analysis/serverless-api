@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2021-01-01
+Description: Sample SAM Template for Hello World
+
+Globals:
+  Api:
+    Cors:
+      AllowOrigin: "'*'"
+
+Resources:
+  HelloWorldApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      DefinitionBody:
+        swagger: "2.0"
+        info:
+          title: "hello-world-api"
+        paths:
+          /hello-world:
+            get:
+              produces:
+                - "application/json"
+              responses:
+                "200":
+                  description: "200 response"
+              x-amazon-apigateway-integration:
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${HelloWorldFunction.Arn}/invocations
+                responses:
+                  default:
+                    statusCode: "200"
+                passthroughBehavior: "when_no_match"
+                httpMethod: "POST"
+                type: "aws_proxy"
+
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      CodeUri: dist/handlers/
+      Handler: hello-world.lambdaHandler
+      Runtime: nodejs18.x
+      Events:
+        HelloWorldApi:
+          Type: Api 
+          Properties:
+            Path: /hello-world
+            Method: get
+            RestApiId:
+              Ref: HelloWorldApi
