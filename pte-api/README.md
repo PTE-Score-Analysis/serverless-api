@@ -46,10 +46,9 @@ After starting the local API Gateway, the function can be tested using HTTP requ
 
 ```mermaid
 graph LR
-  A[Yarn Build] --> B[SAM Build]
-  B --> C[SAM Local Start-API]
-  C --> D[Invoke via Postman/Insomnia]
-  D --> E{Response: "Hello World!"}
+    A[Yarn Build] -->|Compile TypeScript| B[SAM Build]
+    B -->|Build SAM Application| C[SAM Local Start-API]
+    C --> D{Test API using Postman/Insomnia}
 ```
 
 ## Notes
