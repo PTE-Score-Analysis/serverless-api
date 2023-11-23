@@ -8,6 +8,9 @@ This document describes the process for building and testing an AWS Lambda funct
 
 The build process involves compiling the TypeScript code and preparing the Lambda function for local testing. The steps are as follows:
 
+## !!! Make sure you have docker installed as api-gate-way will need Docker and the lambdas will be compiled to docker. [Download Docker Here](https://www.docker.com/products/docker-desktop/)
+
+
 1. **Compile TypeScript Code**
    - Run the following command to compile the TypeScript code into JavaScript:
      ```
