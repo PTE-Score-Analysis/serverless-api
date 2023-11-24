@@ -59,3 +59,19 @@ graph LR
 - Ensure you have Yarn, AWS SAM CLI, and a tool like Postman or Insomnia installed.
 - Replace `http://127.0.0.1:3000/hello-world` with your function's endpoint if it's different.
 - The response "Hello World!" assumes that your Lambda function is programmed to return this string.
+
+
+## If you have never installed yarn or SAM before this project, you should install them first. There are few ways to do it, here we pick up an easy way, especially for the Windows users, it will save your time.That is "Use npm to install yarn and SAM". You should do as follows:
+
+  - Run the following command to install your npm:
+  ``` 
+  npm install -g npm
+  ```
+  - Use npm to install yarn via the following command:
+  ```
+  npm i yarn --save
+  ```
+  - Use npm to install SAM via the following command:
+  ```
+  npm i sam --save
+  ```
