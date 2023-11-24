@@ -61,17 +61,24 @@ graph LR
 - The response "Hello World!" assumes that your Lambda function is programmed to return this string.
 
 
-## If you have never installed yarn or SAM before this project, you should install them first. There are few ways to do it, here we pick up an easy way, especially for the Windows users, it will save your time.That is "Use npm to install yarn and SAM". You should do as follows:
+## Install yarn and SAM before you start building your process.
 
-  - Run the following command to install your npm:
-  ``` 
-  npm install -g npm
-  ```
-  - Use npm to install yarn via the following command:
-  ```
-  npm i yarn --save
-  ```
-  - Use npm to install SAM via the following command:
-  ```
-  npm i sam --save
-  ```
+If you have never installed yarn or SAM before this project, you should install them first. There are few ways to do it, here we pick up an easy way, especially for the Windows users, it will save your time.That is "Use npm to install yarn and SAM". You should do as follows:
+
+ 1. **Install npm**
+    - Run the following command:
+      ``` 
+      npm install -g npm
+      ```
+      
+ 2. **Install yarn** 
+    - Use npm to install yarn via the following command:
+      ```
+      npm i yarn --save
+      ```
+      
+ 3. **Install SAM**
+    - Use npm to install SAM via the following command:
+      ```
+      npm i sam --save
+      ```
