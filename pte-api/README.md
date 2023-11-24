@@ -63,9 +63,10 @@ graph LR
 
 
 ## To build your postgres on local
-     ```
-     docker compose up -d
-     ```
+- Run docker container first:
+    ```
+    docker compose up -d
+    ```
 - Then download [Dbeaver](https://dbeaver.io/download/) or [PGAdmin](https://www.pgadmin.org/download/)
 - (Dbeaver has a bug with AWS VPC and SSL certificate but other than that Dbeaver is much better than PGAdmin)
 - Go to you PG Admin and the env should be then you will be connected to the database and our main database
