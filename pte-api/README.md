@@ -54,8 +54,26 @@ graph LR
     C --> D{Test API using Postman/Insomnia}
 ```
 
+
 ## Notes
 
 - Ensure you have Yarn, AWS SAM CLI, and a tool like Postman or Insomnia installed.
 - Replace `http://127.0.0.1:3000/hello-world` with your function's endpoint if it's different.
 - The response "Hello World!" assumes that your Lambda function is programmed to return this string.
+
+
+## To build your postgres on local
+     ```
+     docker compose up -d
+     ```
+- Then download [Dbeaver](https://dbeaver.io/download/) or [PGAdmin](https://www.pgadmin.org/download/)
+- (Dbeaver has a bug with AWS VPC and SSL certificate but other than that Dbeaver is much better than PGAdmin)
+- Go to you PG Admin and the env should be then you will be connected to the database and our main database
+- Our main database is `ptedatabase`
+    ```
+    Name: Pte-app
+    Host name/address: localhost
+    Post: 5432
+    Username: postgres
+    Password: postgres
+    ```
