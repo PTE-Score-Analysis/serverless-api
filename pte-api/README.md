@@ -100,5 +100,3 @@ graph LR
     Post: 5432
     Username: postgres
     Password: postgres
-    ```
-  
