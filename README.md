@@ -1,4 +1,5 @@
 ## This is the repo for our serverless apis
+<<<<<<< HEAD
 
 ## Install yarn and SAM before you start building your process.
 
@@ -21,6 +22,8 @@ If you have never installed yarn or SAM before this project, you should install 
       ```
       npm i sam --save
       ```
+=======
+>>>>>>> 7a10f7ecf3eda64586486f81e094a5166579768e
 # Local Development and Testing of AWS Lambda Function
 
 ## Overview
@@ -50,7 +53,10 @@ If you have never installed yarn or SAM before this project, you should install 
       npm i sam --save
       ```
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7a10f7ecf3eda64586486f81e094a5166579768e
 ## Build Process
 
 The build process involves compiling the TypeScript code and preparing the Lambda function for local testing. The steps are as follows:
@@ -123,4 +129,8 @@ graph LR
     Post: 5432
     Username: postgres
     Password: postgres
+<<<<<<< HEAD
     ```
+=======
+    ```
+>>>>>>> 7a10f7ecf3eda64586486f81e094a5166579768e
