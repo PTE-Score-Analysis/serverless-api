@@ -63,7 +63,7 @@ graph LR
 
 ## Install yarn and SAM before you start building your process.
 
-If you have never installed yarn or SAM before this project, you should install them first. There are few ways to do it, here we pick up an easy way, especially for the Windows users, it will save your time.That is "Use npm to install yarn and SAM". You should do as follows:
+If you have never installed yarn or SAM before this project, you should install them first. There are few ways to do it, here we pick up an easy way, it will save your time.That is "Use npm to install yarn and SAM". You should do as follows:
 
  1. **Install npm**
     - Run the following command:
@@ -82,3 +82,20 @@ If you have never installed yarn or SAM before this project, you should install 
       ```
       npm i sam --save
       ```
+
+## To build your postgres on local
+- Run docker container first:
+    ```
+    docker compose up -d
+    ```
+- Then download [Dbeaver](https://dbeaver.io/download/) or [PGAdmin](https://www.pgadmin.org/download/)
+- (Dbeaver has a bug with AWS VPC and SSL certificate but other than that Dbeaver is much better than PGAdmin)
+- Go to you PG Admin and the env should be then you will be connected to the database and our main database
+- Our main database is `ptedatabase`
+    ```
+    Name: Pte-app
+    Host name/address: localhost
+    Post: 5432
+    Username: postgres
+    Password: postgres
+    ```
