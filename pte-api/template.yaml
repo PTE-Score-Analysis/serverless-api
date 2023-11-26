@@ -48,3 +48,9 @@ Resources:
             Method: get
             RestApiId:
               Ref: HelloWorldApi
+  
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: test-results
+        
