@@ -63,10 +63,9 @@ graph LR
 
 
 ## To build your postgres on local
-- Run docker container first:
-    ```
-    docker compose up -d
-    ```
+     ```
+     docker compose up -d
+     ```
 - Then download [Dbeaver](https://dbeaver.io/download/) or [PGAdmin](https://www.pgadmin.org/download/)
 - (Dbeaver has a bug with AWS VPC and SSL certificate but other than that Dbeaver is much better than PGAdmin)
 - Go to you PG Admin and the env should be then you will be connected to the database and our main database
@@ -78,3 +77,35 @@ graph LR
     Username: postgres
     Password: postgres
     ```
+
+- 
+    ```
+    Create Table fp_user(
+	user_id SERIAL PRIMARY KEY,
+	first_name VARCHAR(255) NOT NULL,
+	last_name VARCHAR(255) NOT NULL,
+	phone_no VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	created_at TIMESTAMP NOT NULL,
+	wechat_account VARCHAR(255)
+)
+
+CREATE TABLE user_reponse (
+   id SERIAL PRIMARY KEY,
+	user_id INT REFERENCES fp_user(user_id),
+   response JSON NOT NULL,
+   create_date TIMESTAMP NOT NULL
+);
+
+CREATE TABLE predefined_question (
+    question_id SERIAL PRIMARY KEY,
+    question_content VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE test_result (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES fp_user(user_id),
+    result_s3 text NOT NULL,
+    created_at TIMESTAMP NOT NULL
+)
+```
