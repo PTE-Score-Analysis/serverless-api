@@ -33,6 +33,22 @@ Resources:
                 passthroughBehavior: "when_no_match"
                 httpMethod: "POST"
                 type: "aws_proxy"
+          /predefined-questions:
+            get:
+              produces:
+                - "application/json"
+              responses:
+                "200":
+                  description: "200 response"
+              x-amazon-apigateway-integration:
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetAllPredefinedQuestionsFunction.Arn}/invocations
+                responses:
+                  default:
+                    statusCode: "200"
+                passthroughBehavior: "when_no_match"
+                httpMethod: "POST"
+                type: "aws_proxy"
 
   HelloWorldFunction:
     Type: AWS::Serverless::Function 
@@ -45,6 +61,20 @@ Resources:
           Type: Api 
           Properties:
             Path: /hello-world
+            Method: get
+            RestApiId:
+              Ref: HelloWorldApi
+  GetAllPredefinedQuestionsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: dist/handlers/predefined-question/get-predefined-questions.getAllPredefinedQuestions
+      Runtime: nodejs18.x
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /predefined-questions
             Method: get
             RestApiId:
               Ref: HelloWorldApi
